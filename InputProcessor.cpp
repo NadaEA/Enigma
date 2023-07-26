@@ -5,28 +5,20 @@
 
 #include "InputProcessor.h"
 
-bool Keyboard::letterValidator()  {
-    std::cout<<"Welcome to this Enigma simulator, please begin entering letters!\n";
-    std::cin>> CurrentLetter;
-//    bool validValue = true;
-//    while(validValue){
-//        if((int)CurrentLetter >= 65 && (int)CurrentLetter <= 90){
-//            std::cin>> CurrentLetter;
-//            return true;
-//        }
-//        else{
-//            std::cout<<"Please enter a valid capital letter character!";
-//            validValue = false;
-//            return false;
-//        }
-//
-//    }
-    if((int)CurrentLetter >= 65 && (int)CurrentLetter <= 90){
-        return true;
-    }
-    else{
-        std::cout<<"Please enter a valid capital letter character!";
-        return false;
-    }
-
+std::string Keyboard::scriptCaptor() {
+    std::cout<<"Welcome to this Enigma simulator, please begin entering capital letters!\n";
+    std::getline(std::cin,script);
+    return script;
 };
+
+void Keyboard::scriptValidator(std::string message) {
+    int script_size = message.length();
+    for(int i = 0; i<script_size;i++){
+        if(message.at(i) >= 65 && message.at(i) <= 90 ){
+            edited_script.push_back(message.at(i));
+        }
+    }
+    std::cout<<edited_script;
+};
+
+

@@ -2,18 +2,16 @@
 // Created by Nada El Arabi on 2023-07-02.
 //
 
-//#ifndef ENIGMA_INPUTPROCESSOR_H
-//#define ENIGMA_INPUTPROCESSOR_H
-
-//#endif //ENIGMA_INPUTPROCESSOR_H
-
 #include <iostream>
+#include <string>
 
 class Keyboard{
     private:
-    char CurrentLetter;
+    std::string script;
+    std::string edited_script;
 
     public:
-    bool letterValidator();
+    std::string scriptCaptor();
+    void scriptValidator(std::string message);
 
 };
