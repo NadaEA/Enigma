@@ -6,6 +6,7 @@ int main() {
     Keyboard *pKeyboard = new Keyboard();
     //bool validValue;
     std::string cypher = pKeyboard->scriptCaptor();
-    pKeyboard->scriptValidator(cypher);
-
+    std::string edited_string = pKeyboard->scriptValidator(cypher);
+    std::cout<<"\n" + edited_string;
+    pKeyboard->rotorSelection();
 }

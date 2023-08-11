@@ -5,13 +5,15 @@
 #include <iostream>
 #include <string>
 
-class Keyboard{
+class Keyboard{//Keyboard probably isn't the best name for this class
     private:
     std::string script;
     std::string edited_script;
+    int rotors [3];
 
     public:
     std::string scriptCaptor();
-    void scriptValidator(std::string message);
+    std::string scriptValidator(std::string message);
+    void rotorSelection();
 
 };
