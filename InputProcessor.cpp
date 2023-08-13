@@ -38,4 +38,9 @@ void Keyboard::rotorSelection() {
 
 }
 
+int Keyboard::getRotorI() {
+    int rotorI =  this->rotors[0];
+    return rotorI;
+}
+
 
