@@ -43,4 +43,8 @@ int Keyboard::getRotorI() {
     return rotorI;
 }
 
+int Keyboard::getRotorII() {
+    int rotorII =  this->rotors[1];
+    return rotorII;
 
+}

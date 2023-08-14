@@ -17,5 +17,6 @@ class Keyboard{//Keyboard probably isn't the best name for this class
     std::string scriptValidator(std::string message);
     void rotorSelection();
     int getRotorI();
+    int getRotorII();
 
 };
