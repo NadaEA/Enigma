@@ -38,6 +38,21 @@ void Keyboard::rotorSelection() {
 
 }
 
+void Keyboard::intialPositionSelection() {
+    for(int i=0;i<3;i++){//Checkout what CLion is saying here, prettier way of doing things
+        std::cout<<"Please enter a capital letter, corresponding to a rotor Position";
+        char position;
+        std::cin>>position;
+        startingPositions[i] = position;
+    }
+    std::cout<<"The first position is: ";
+    std::cout<<startingPositions[0];
+    std::cout<<"\nThe second position is: ";
+    std::cout<<startingPositions[1];
+    std::cout<<"\nThe third position is: ";
+    std::cout<<startingPositions[2];
+}
+
 int Keyboard::getRotorI() {
     int rotorI =  this->rotors[0];
     return rotorI;
@@ -48,3 +63,17 @@ int Keyboard::getRotorII() {
     return rotorII;
 
 }
+int Keyboard::getRotorIII() {
+    int rotorIII =  this->rotors[2];
+    return rotorIII;
+
+}
+
+int Keyboard::letterCharacterToIndex(char upperCaseLetter){
+    char letter = upperCaseLetter;
+    int index = upperCaseLetter - 65;
+    std::cout<<"\nThe letter was: "<<letter<<" and its corresponding index is: "<<index;
+    return index;
+}
+
+
