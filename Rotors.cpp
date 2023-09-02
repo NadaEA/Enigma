@@ -47,6 +47,7 @@ void Rotors::initialPositionSetter(int index) {
 
 void Rotors::printCurrentStateArray() {
     for(int arrayLetter : arrayLetters){
-        std::cout<<"\n" << arrayLetter <<" ";
+        std::cout<<" " << arrayLetter <<" ";
     }
+    std::cout<<"\n================================\n";
 }

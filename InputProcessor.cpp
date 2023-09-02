@@ -72,8 +72,22 @@ int Keyboard::getRotorIII() {
 int Keyboard::letterCharacterToIndex(char upperCaseLetter){
     char letter = upperCaseLetter;
     int index = upperCaseLetter - 65;
-    std::cout<<"\nThe letter was: "<<letter<<" and its corresponding index is: "<<index;
+    std::cout<<"\nThe letter was: "<<letter<<" and its corresponding index is: "<<index<<"\n";
     return index;
 }
 
+char Keyboard::getStartingPositionI()  {
+    char position =  this->startingPositions[0];
+    return position;
+}
+
+char Keyboard::getStartingPositionII()  {
+    char position =  this->startingPositions[1];
+    return position;
+}
+
+char Keyboard::getStartingPositionIII()  {
+    char position =  this->startingPositions[2];
+    return position;
+}
 

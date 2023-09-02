@@ -10,9 +10,7 @@ class Keyboard{//Keyboard probably isn't the best name for this class
     std::string script;
     std::string edited_script;
     int rotors [3];
-    int rotor1,rotor2,rotor3;
     char startingPositions[3];
-    char position1,position2,position3;
 
     public:
     std::string scriptCaptor();
@@ -22,6 +20,9 @@ class Keyboard{//Keyboard probably isn't the best name for this class
     int getRotorII();
     int getRotorIII();
     void intialPositionSelection();
+    char getStartingPositionI();
+    char getStartingPositionII();
+    char getStartingPositionIII();
     int letterCharacterToIndex(char upperCaseLetter);
 
 

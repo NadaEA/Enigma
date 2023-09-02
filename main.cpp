@@ -5,7 +5,6 @@
 
 int main() {
     Keyboard *pKeyboard = new Keyboard();
-    //bool validValue;
     std::string cypher = pKeyboard->scriptCaptor();
     std::string edited_string = pKeyboard->scriptValidator(cypher);
     std::cout<<"\n" + edited_string;
@@ -18,10 +17,20 @@ int main() {
 
     pKeyboard->intialPositionSelection();
 
-    int initialPositionIndex = pKeyboard->letterCharacterToIndex('A');
+    //Rotating the rotors to their selected initial position
+    int rotorIPositionIndex = pKeyboard->letterCharacterToIndex(pKeyboard->getStartingPositionI());
+    int rotorIIPositionIndex = pKeyboard->letterCharacterToIndex(pKeyboard->getStartingPositionII());
+    int rotorIIIPositionIndex = pKeyboard->letterCharacterToIndex(pKeyboard->getStartingPositionIII());
 
-    RotorI->initialPositionSetter(initialPositionIndex);
+    RotorI->initialPositionSetter(rotorIPositionIndex);
     RotorI->printCurrentStateArray();
+
+    RotorII->initialPositionSetter(rotorIIPositionIndex);
+    RotorII->printCurrentStateArray();
+
+    RotorIII->initialPositionSetter(rotorIIIPositionIndex);
+    RotorIII->printCurrentStateArray();
+
 
 
 }
