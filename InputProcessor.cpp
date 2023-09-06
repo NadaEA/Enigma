@@ -38,7 +38,7 @@ void Keyboard::rotorSelection() {
 
 }
 
-void Keyboard::intialPositionSelection() {
+void Keyboard::initialPositionSelection() {
     for(int i=0;i<3;i++){//Checkout what CLion is saying here, prettier way of doing things
         std::cout<<"Please enter a capital letter, corresponding to a rotor Position";
         char position;

@@ -15,7 +15,7 @@ int main() {
     Rotors *RotorII = new Rotors(pKeyboard->getRotorII());
     Rotors *RotorIII = new Rotors(pKeyboard->getRotorIII());
 
-    pKeyboard->intialPositionSelection();
+    pKeyboard->initialPositionSelection();
 
     //Rotating the rotors to their selected initial position
     int rotorIPositionIndex = pKeyboard->letterCharacterToIndex(pKeyboard->getStartingPositionI());
@@ -30,6 +30,8 @@ int main() {
 
     RotorIII->initialPositionSetter(rotorIIIPositionIndex);
     RotorIII->printCurrentStateArray();
+
+    RotorI->shiftRotor();
 
 
 

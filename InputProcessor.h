@@ -19,7 +19,7 @@ class Keyboard{//Keyboard probably isn't the best name for this class
     int getRotorI();
     int getRotorII();
     int getRotorIII();
-    void intialPositionSelection();
+    void initialPositionSelection();
     char getStartingPositionI();
     char getStartingPositionII();
     char getStartingPositionIII();
