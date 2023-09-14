@@ -70,7 +70,12 @@ void Rotors::shiftRotor() {
         std::cout<<" " << arrayLetter <<" ";
     }
     std::cout<<"\n================================\n";
+}
 
-
-
+bool Rotors::checkTurnoverPosition() {
+    if(this->arrayLetters[0]== this->turnoverPosition){
+        return true;
+    }else{
+        return false;
+    }
 }

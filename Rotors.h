@@ -22,6 +22,8 @@ public:
     void initialPositionSetter(int index);
     void printCurrentStateArray();
     void shiftRotor();
+    bool checkTurnoverPosition();
+
 
 
 
