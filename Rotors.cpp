@@ -88,7 +88,6 @@ int Rotors::getLetterAtIndex(int currentLetter) {
 int Rotors::convertLetterToNumber(char letter) {
     char Letter = letter;
     int number = letter - 64;
-    //std::cout<<"\nThe letter was: "<<letter<<" and its corresponding index is: "<<index<<"\n";
     return number;
 }
 

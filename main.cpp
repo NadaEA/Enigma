@@ -44,12 +44,15 @@ int main() {
 
         }else{//R1 not in turnover
             if(RotorII->checkTurnoverPosition()){//R1 not in turnover, R2 in turnover
+                //Do nothing for nom
 
             }else{//R1 not in turnover, R2 not in turnover
                 RotorI->shiftRotor();//First we shift the first rotor, always
 
-                int initialLetterRotorI = pKeyboard->letterCharacterToIndex(letter);
-                int letterWiredTo = RotorI->getWiring(initialLetterRotorI);
+                int indexOfIncomingLetter = pKeyboard->letterCharacterToIndex(letter);//Send the incoming electrical current into the correct position in the rotor
+                int letterAtIndexInRotor = RotorI->getLetterAtIndex(indexOfIncomingLetter);//Finding out what the letter is where the current was sent
+                int letterWiredTo = RotorI->getWiring(letterAtIndexInRotor);//Sending the current through the correct contact
+
 
             }
 
