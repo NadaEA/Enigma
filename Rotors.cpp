@@ -79,3 +79,21 @@ bool Rotors::checkTurnoverPosition() {
         return false;
     }
 }
+
+int Rotors::getLetterAtIndex(int currentLetter) {
+    int letterAtIndex = arrayLetters[currentLetter];
+    return letterAtIndex;
+}
+
+int Rotors::convertLetterToNumber(char letter) {
+    char Letter = letter;
+    int number = letter - 64;
+    //std::cout<<"\nThe letter was: "<<letter<<" and its corresponding index is: "<<index<<"\n";
+    return number;
+}
+
+int Rotors::getWiring(int letter){
+    char alphabetLetter = this->wiring.at(letter);
+    int letterWiredTo = this->convertLetterToNumber(alphabetLetter);
+    return letterWiredTo;
+}

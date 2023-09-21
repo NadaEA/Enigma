@@ -36,17 +36,24 @@ int main() {
 //    std::cout<<"\nIs RotorI in turnoverPos?" << RotorI->checkTurnoverPosition();
 
     for(char letter: edited_string){
-        //First need to check if the first rotor is in turnover position
-        //Need to get the current first position of the rotor
-        //Need to get the turnover position of the rotor
-        //Need to check current first position against turnover position of rotor
 
-        //After that probably going to branch out into 1)yes currently in turnover and no, not currently in turnover
+        int indexOfCurrentLetter = pKeyboard->letterCharacterToIndex(letter);
+        if(RotorI->checkTurnoverPosition()){//R1 in turnover
+            //Do nothing for now
 
-        RotorI->shiftRotor();//Always advance the first rotor after each key is pressed
-        int indexLetter = pKeyboard->letterCharacterToIndex(letter);//We retrieve the index of the current letter
-        //to send it to its proper entry point to the rotors
 
+        }else{//R1 not in turnover
+            if(RotorII->checkTurnoverPosition()){//R1 not in turnover, R2 in turnover
+
+            }else{//R1 not in turnover, R2 not in turnover
+                RotorI->shiftRotor();//First we shift the first rotor, always
+
+                int initialLetterRotorI = pKeyboard->letterCharacterToIndex(letter);
+                int letterWiredTo = RotorI->getWiring(initialLetterRotorI);
+
+            }
+
+        }
 
     }
 

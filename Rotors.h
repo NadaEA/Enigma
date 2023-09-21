@@ -23,6 +23,10 @@ public:
     void printCurrentStateArray();
     void shiftRotor();
     bool checkTurnoverPosition();
+    int convertLetterToNumber(char letter);
+    int getLetterAtIndex(int currentLetter);
+    int getWiring(int letter);
+    //int findWiredLetter(int letter);
 
 
 
