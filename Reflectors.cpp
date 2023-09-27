@@ -5,7 +5,12 @@
 #include "Reflectors.h"
 
 Reflectors::Reflectors(char reflectorLetter) {
-    if(reflectorLetter == 64){
-        wiring = "";
+    if(reflectorLetter == 65){
+        wiring = "EJMZALYXVBWFCRQUONTSPIKHGD";
+        std::cout<<"Reflector : A was chosen!";
+    }else if(reflectorLetter == 64 ){
+        wiring = "YRUHQSLDPXNGOKMIEBFZCWVJAT";
+    }else{
+        wiring = "FVPJIAOYEDRZXWGCTKUQSBNMHL";
     }
 }

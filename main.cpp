@@ -2,6 +2,7 @@
 #include <string>
 #include "InputProcessor.h"
 #include "Rotors.h"
+#include "Reflectors.h"
 
 int main() {
     Keyboard *pKeyboard = new Keyboard();
@@ -9,6 +10,9 @@ int main() {
     std::string edited_string = pKeyboard->scriptValidator(cypher);
     std::cout<<"\n" + edited_string;
     pKeyboard->rotorSelection();
+    pKeyboard->reflectorSelection();
+    //Initializing the reflector
+    Reflectors *Reflector = new Reflectors(pKeyboard->getReflector());
 
     //Initializing the rotors
     Rotors *RotorI = new Rotors(pKeyboard->getRotorI());

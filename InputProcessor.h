@@ -11,6 +11,7 @@ class Keyboard{//Keyboard probably isn't the best name for this class
     std::string edited_script;
     int rotors [3];
     char startingPositions[3];
+    char reflector;
 
     public:
     std::string scriptCaptor();
@@ -23,6 +24,8 @@ class Keyboard{//Keyboard probably isn't the best name for this class
     char getStartingPositionI();
     char getStartingPositionII();
     char getStartingPositionIII();
+    void reflectorSelection();
+    char getReflector();
     int letterCharacterToIndex(char upperCaseLetter);
 
 

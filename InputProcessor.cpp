@@ -91,3 +91,12 @@ char Keyboard::getStartingPositionIII()  {
     return position;
 }
 
+void Keyboard::reflectorSelection() {
+    std::cout<<"Please enter a capital letter character for the reflector selection : ";
+    std::cin>>reflector;
+}
+
+char Keyboard::getReflector() {
+    return this->reflector;
+}
+
