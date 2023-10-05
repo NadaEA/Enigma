@@ -26,7 +26,7 @@ public:
     int convertLetterToNumber(char letter);
     int getLetterAtIndex(int currentLetter);
     int getWiring(int letter);
-    //int findWiredLetter(int letter);
+    int findIndexWiredLetter(int letter);
 
 
 

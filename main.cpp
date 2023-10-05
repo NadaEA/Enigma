@@ -9,8 +9,11 @@ int main() {
     std::string cypher = pKeyboard->scriptCaptor();
     std::string edited_string = pKeyboard->scriptValidator(cypher);
     std::cout<<"\n" + edited_string;
+
+    //Rotor and reflector selection
     pKeyboard->rotorSelection();
     pKeyboard->reflectorSelection();
+
     //Initializing the reflector
     Reflectors *Reflector = new Reflectors(pKeyboard->getReflector());
 
@@ -53,9 +56,25 @@ int main() {
             }else{//R1 not in turnover, R2 not in turnover
                 RotorI->shiftRotor();//First we shift the first rotor, always
 
-                int indexOfIncomingLetter = pKeyboard->letterCharacterToIndex(letter);//Send the incoming electrical current into the correct position in the rotor
-                int letterAtIndexInRotor = RotorI->getLetterAtIndex(indexOfIncomingLetter);//Finding out what the letter is where the current was sent
-                int letterWiredTo = RotorI->getWiring(letterAtIndexInRotor);//Sending the current through the correct contact
+                //The current travels through the first rotor
+                int indexOfIncomingLetter = pKeyboard->letterCharacterToIndex(letter);//Send the incoming electrical current into the correct position/letter in the 1st rotor
+                int letterAtIndexInRotorI = RotorI->getLetterAtIndex(indexOfIncomingLetter);//Finding out what the letter is where the current was sent (at the index!)
+                int letterWiredToI = RotorI->getWiring(letterAtIndexInRotorI);//Determining to which letter the letter at index is wired to
+                int findIndexLetterWiredToInArrayI = RotorI->findIndexWiredLetter(letterWiredToI);//We send the current through the wire and retrieve the end contact (index) to send the current to the next rotor
+
+                //The current travels through the second rotor
+                int letterAtIndexInRotorII = RotorII->getLetterAtIndex(findIndexLetterWiredToInArrayI);
+                int letterWiredToII = RotorII->getWiring(letterAtIndexInRotorII);
+                int findIndexLetterWiredToInArrayII = RotorII->findIndexWiredLetter(letterWiredToII);
+
+                //The current travels through the third rotor
+                int letterAtIndexInRotorIII = RotorIII->getLetterAtIndex(findIndexLetterWiredToInArrayII);
+                int letterWiredToIII = RotorIII->getWiring(letterAtIndexInRotorIII);
+                int findIndexLetterWiredToInArrayIII = RotorII->findIndexWiredLetter(letterWiredToIII);
+
+                //The current travels through the reflector
+
+
 
 
             }

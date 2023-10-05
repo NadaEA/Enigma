@@ -96,3 +96,14 @@ int Rotors::getWiring(int letter){
     int letterWiredTo = this->convertLetterToNumber(alphabetLetter);
     return letterWiredTo;
 }
+
+int Rotors::findIndexWiredLetter(int letter) {
+    int index;
+    for(int i=0;i<26;i++){
+        if(this->arrayLetters[i] == letter){
+            index = i;//We want to return the index of the letter wired to
+            break;
+        }
+    }
+    return index; //By design, a letter will always be found in the array
+}
