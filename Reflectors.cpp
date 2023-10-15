@@ -14,3 +14,16 @@ Reflectors::Reflectors(char reflectorLetter) {
         wiring = "FVPJIAOYEDRZXWGCTKUQSBNMHL";
     }
 }
+
+int Reflectors::getIndexLetterWiredTo(int letterIndex) {
+    char letterAtIndexReflector = this->wiring.at(letterIndex);
+    int wiredLetterIndex = this->letterCharacterToIndex(letterAtIndexReflector);
+    return wiredLetterIndex;
+}
+
+int Reflectors::letterCharacterToIndex(char upperCaseLetter) {
+    char letter = upperCaseLetter;
+    int index = upperCaseLetter - 65;
+    //std::cout<<"\nThe letter was: "<<letter<<" and its corresponding index is: "<<index<<"\n";
+    return index;
+}

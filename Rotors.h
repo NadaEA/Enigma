@@ -28,7 +28,4 @@ public:
     int getWiring(int letter);
     int findIndexWiredLetter(int letter);
 
-
-
-
 };

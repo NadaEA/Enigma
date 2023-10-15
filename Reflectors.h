@@ -12,5 +12,7 @@ class Reflectors{
     public:
     Reflectors();
     Reflectors(char reflectorLetter);
+    int getIndexLetterWiredTo(int letter);
+    int letterCharacterToIndex(char upperCaseLetter);
 
 };

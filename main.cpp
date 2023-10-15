@@ -73,6 +73,8 @@ int main() {
                 int findIndexLetterWiredToInArrayIII = RotorII->findIndexWiredLetter(letterWiredToIII);
 
                 //The current travels through the reflector
+                int indexLetterWiredToReflector = Reflector->getIndexLetterWiredTo(findIndexLetterWiredToInArrayIII);
+
 
 
 
