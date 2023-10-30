@@ -27,5 +27,6 @@ public:
     int getLetterAtIndex(int currentLetter);
     int getWiring(int letter);
     int findIndexWiredLetter(int letter);
+    int findLetterInWiring(int letter);
 
 };

@@ -40,11 +40,11 @@ void Rotors::initialPositionSetter(int index) {
     int lettersUntilA = 26 - index;
     int number = 1;
     for(int i=0; i<lettersUntilA;i++){//Here we set up all the letters starting from the given initial position
-        arrayLetters[i] = letterNumber;
+        this->arrayLetters[i] = letterNumber;
         letterNumber++;
     }
     for(int i = lettersUntilA;i<26;i++){//Here we initialize the rest of the array with the letters alphabetically before the initial position
-        arrayLetters[i] = number;
+        this->arrayLetters[i] = number;
         number++;
     }
 
@@ -92,7 +92,7 @@ int Rotors::convertLetterToNumber(char letter) {
 }
 
 int Rotors::getWiring(int letter){
-    char alphabetLetter = this->wiring.at(letter);
+    char alphabetLetter = this->wiring.at(letter-1);
     int letterWiredTo = this->convertLetterToNumber(alphabetLetter);
     return letterWiredTo;
 }
@@ -106,4 +106,10 @@ int Rotors::findIndexWiredLetter(int letter) {
         }
     }
     return index; //By design, a letter will always be found in the array
+}
+
+int Rotors::findLetterInWiring(int letter) {
+    char characterLetter = letter + 64;
+    int newLetter = wiring.find(characterLetter) + 1;//Because we're looking for the letter itself, not its index!
+    return newLetter;
 }

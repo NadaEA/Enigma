@@ -41,6 +41,7 @@ int main() {
     //RotorI->shiftRotor();
 
 //    std::cout<<"\nIs RotorI in turnoverPos?" << RotorI->checkTurnoverPosition();
+    std::string cypherText = "";
 
     for(char letter: edited_string){
 
@@ -70,10 +71,36 @@ int main() {
                 //The current travels through the third rotor
                 int letterAtIndexInRotorIII = RotorIII->getLetterAtIndex(findIndexLetterWiredToInArrayII);
                 int letterWiredToIII = RotorIII->getWiring(letterAtIndexInRotorIII);
-                int findIndexLetterWiredToInArrayIII = RotorII->findIndexWiredLetter(letterWiredToIII);
+                int findIndexLetterWiredToInArrayIII = RotorIII->findIndexWiredLetter(letterWiredToIII);
 
                 //The current travels through the reflector
                 int indexLetterWiredToReflector = Reflector->getIndexLetterWiredTo(findIndexLetterWiredToInArrayIII);
+
+                //We go back through the rotors!
+
+                //Current traverses back through the third rotor
+                int letterAtIndexReturnRIII = RotorIII->getLetterAtIndex(indexLetterWiredToReflector);
+                int letterWiredToReturnRIII = RotorIII->findLetterInWiring(letterAtIndexReturnRIII);
+                int findIndexLetterWiredToReturnRIII = RotorIII->findIndexWiredLetter(letterWiredToReturnRIII);
+
+                //Current traverses back through the second rotor
+                int letterAtIndexReturnRII = RotorII->getLetterAtIndex(findIndexLetterWiredToReturnRIII);
+                int letterWiredToReturnRII = RotorII->findLetterInWiring(letterAtIndexReturnRII);
+                int findIndexLetterWiredToReturnRII = RotorII->findIndexWiredLetter(letterWiredToReturnRII);
+
+                //Current traverses back through the first rotor
+                int letterAtIndexReturnRI = RotorI->getLetterAtIndex(findIndexLetterWiredToReturnRII);
+                int letterWiredToReturnRI = RotorI->findLetterInWiring(letterAtIndexReturnRI);
+                int findIndexLetterWiredToReturnRI = RotorI->findIndexWiredLetter(letterWiredToReturnRI);
+
+                //Finally, we recover the letter!
+                int finalLetter = findIndexLetterWiredToReturnRI + 1; //We're going from an index to the position of the letter
+                char finalLetterChar = finalLetter + 64; //We're going back to the ASCII character
+                std::string outputLetter = std::string(1,finalLetterChar);
+                cypherText += outputLetter;
+
+
+
 
 
 
@@ -85,6 +112,6 @@ int main() {
 
     }
 
-
+    std::cout<< "The cypher is: "<<cypherText;
 
 }

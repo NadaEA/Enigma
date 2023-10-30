@@ -8,7 +8,7 @@ Reflectors::Reflectors(char reflectorLetter) {
     if(reflectorLetter == 65){
         wiring = "EJMZALYXVBWFCRQUONTSPIKHGD";
         std::cout<<"Reflector : A was chosen!";
-    }else if(reflectorLetter == 64 ){
+    }else if(reflectorLetter == 66 ){
         wiring = "YRUHQSLDPXNGOKMIEBFZCWVJAT";
     }else{
         wiring = "FVPJIAOYEDRZXWGCTKUQSBNMHL";
