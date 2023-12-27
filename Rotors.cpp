@@ -31,7 +31,7 @@ Rotors::Rotors(int newNumber) {
         std::cout<<"Please enter a valid number for the rotor selection";
     }
 
-    std::cout<<"\nRotor number: "<< newNumber<< " initialized!";
+//    std::cout<<"\nRotor number: "<< newNumber<< " initialized!"<<std::endl;//HEHEHEHEHEHEHEHEHE
 
 }
 
@@ -65,11 +65,11 @@ void Rotors::shiftRotor() {
     }
     this->arrayLetters[25] = firstElementOldArray;
 
-    std::cout<<"\nThis is the shifted array: ";//Printing out the result to make sure it's valid
-    for(int arrayLetter : arrayLetters){
-        std::cout<<" " << arrayLetter <<" ";
-    }
-    std::cout<<"\n================================\n";
+//    std::cout<<"\nThis is the shifted array: ";//Printing out the result to make sure it's valid
+//    for(int arrayLetter : arrayLetters){
+//        std::cout<<" " << arrayLetter <<" ";
+//    }
+//    std::cout<<"\n================================\n";
 }
 
 bool Rotors::checkTurnoverPosition() {

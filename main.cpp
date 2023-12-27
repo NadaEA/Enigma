@@ -5,14 +5,14 @@
 #include "Reflectors.h"
 
 int main() {
+    std::cout<<"Welcome to this Enigma simulator! Please begin with choosing the rotors!"<<std::endl<<std::endl;
     Keyboard *pKeyboard = new Keyboard();
-    std::string cypher = pKeyboard->scriptCaptor();
-    std::string edited_string = pKeyboard->scriptValidator(cypher);
-    std::cout<<"\n" + edited_string;
 
     //Rotor and reflector selection
     pKeyboard->rotorSelection();
+    std::cout<<std::endl;
     pKeyboard->reflectorSelection();
+    std::cout<<std::endl;
 
     //Initializing the reflector
     Reflectors *Reflector = new Reflectors(pKeyboard->getReflector());
@@ -30,17 +30,19 @@ int main() {
     int rotorIIIPositionIndex = pKeyboard->letterCharacterToIndex(pKeyboard->getStartingPositionIII());
 
     RotorI->initialPositionSetter(rotorIPositionIndex);
-    RotorI->printCurrentStateArray();
+    //RotorI->printCurrentStateArray();
 
     RotorII->initialPositionSetter(rotorIIPositionIndex);
-    RotorII->printCurrentStateArray();
+    //RotorII->printCurrentStateArray();
 
     RotorIII->initialPositionSetter(rotorIIIPositionIndex);
-    RotorIII->printCurrentStateArray();
+    //RotorIII->printCurrentStateArray();
 
-    //RotorI->shiftRotor();
+    std::cout<<std::endl;
+    std::string cypher = pKeyboard->scriptCaptor();
+    std::string edited_string = pKeyboard->scriptValidator(cypher);
+    std::cout<<"\nThe cypher only including capitalized is: "+edited_string<<std::endl;
 
-//    std::cout<<"\nIs RotorI in turnoverPos?" << RotorI->checkTurnoverPosition();
     std::string cypherText = "";
 
     for(char letter: edited_string){
@@ -116,6 +118,20 @@ int main() {
 
     }
 
-    std::cout<< "The cypher is: "<<cypherText;
+    std::cout<< "The encoded message is: "<<cypherText;
+
+    //We free the memory and take care to not have dangling pointers
+    delete pKeyboard;
+    pKeyboard = nullptr;
+
+    delete Reflector;
+    Reflector = nullptr;
+
+    delete RotorI;
+    RotorI = nullptr;
+    delete RotorII;
+    RotorII = nullptr;
+    delete RotorIII;
+    RotorIII = nullptr;
 
 }

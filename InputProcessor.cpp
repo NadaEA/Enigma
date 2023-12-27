@@ -6,7 +6,7 @@
 #include "InputProcessor.h"
 
 std::string Keyboard::scriptCaptor() {
-    std::cout<<"Welcome to this Enigma simulator, please begin entering your message in capital letters!\n";
+    std::cout<<"Please begin entering your message in capital letters!"<<std::endl;
     std::getline(std::cin,script);
     return script;
 };
@@ -18,39 +18,40 @@ std::string Keyboard::scriptValidator(std::string message) {
             edited_script.push_back(message.at(i));
         }
     }
-    std::cout<<edited_script;
+    //std::cout<<edited_script;
     return edited_script;
 };
 
 void Keyboard::rotorSelection() {
     for(int i=0;i<3;i++){//Checkout what CLion is saying here, prettier way of doing things
-        std::cout<<"Please enter a number from 1 to 5, corresponding to a rotor";
+        std::cout<<"Please enter a number from 1 to 5, corresponding to a rotor: ";
         int rotorNumber;
         std::cin>>rotorNumber;
         rotors[i] = rotorNumber;
     }
-    std::cout<<"The first rotor is: ";
-    std::cout<<rotors[0];
-    std::cout<<"\nThe second is: ";
-    std::cout<<rotors[1];
-    std::cout<<"\nThe third is: ";
-    std::cout<<rotors[2];
+//    std::cout<<"The first rotor is: ";
+//    std::cout<<rotors[0];
+//    std::cout<<"\nThe second is: ";
+//    std::cout<<rotors[1];
+//    std::cout<<"\nThe third is: ";
+//    std::cout<<rotors[2];
 
 }
 
 void Keyboard::initialPositionSelection() {
     for(int i=0;i<3;i++){//Checkout what CLion is saying here, prettier way of doing things
-        std::cout<<"Please enter a capital letter, corresponding to a rotor Position";
+        std::cout<<"Please enter a capital letter, corresponding to a rotor Position: ";
         char position;
         std::cin>>position;
+        std::cin.ignore();
         startingPositions[i] = position;
     }
-    std::cout<<"The first position is: ";
-    std::cout<<startingPositions[0];
-    std::cout<<"\nThe second position is: ";
-    std::cout<<startingPositions[1];
-    std::cout<<"\nThe third position is: ";
-    std::cout<<startingPositions[2];
+//    std::cout<<"The first position is: ";
+//    std::cout<<startingPositions[0];
+//    std::cout<<"\nThe second position is: ";
+//    std::cout<<startingPositions[1];
+//    std::cout<<"\nThe third position is: ";
+//    std::cout<<startingPositions[2];
 }
 
 int Keyboard::getRotorI() {
@@ -72,7 +73,7 @@ int Keyboard::getRotorIII() {
 int Keyboard::letterCharacterToIndex(char upperCaseLetter){
     char letter = upperCaseLetter;
     int index = upperCaseLetter - 65;
-    std::cout<<"\nThe letter was: "<<letter<<" and its corresponding index is: "<<index<<"\n";
+    //std::cout<<"\nThe letter was: "<<letter<<" and its corresponding index is: "<<index<<"\n";
     return index;
 }
 
