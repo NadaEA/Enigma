@@ -4,6 +4,8 @@
 
 The enigma machine was an electromechanical cryptographic device resembling a typewriter used to encode messages during the second World War.
 
+![Enigma_(crittografia)_-_Museo_scienza_e_tecnologia_Milano](https://github.com/NadaEA/Enigma/assets/105009616/6a9c744f-188e-4798-9674-d2b2e565a871)
+
 
 Here is an explanation of the main components and of the encryption/decryption process:
 
